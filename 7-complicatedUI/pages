@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[
         _buildTop(),
         _buildMiddle(),
@@ -14,75 +15,210 @@ class Page1 extends StatelessWidget {
 }
 
 Widget _buildTop() {
-  return Column(
-    children: <Widget>[
-      SizedBox(height: 20,),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('택시'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('블랙'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('바이크'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('대리'),
-            ],
-          ),
-        ],
-      ),
-      SizedBox(height: 20,),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('택시'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('블랙'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('바이크'),
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Icon(Icons.local_taxi, size: 40,),
-              Text('대리'),
-            ],
-          ),
-        ],
-      ),
-    ],
+  return Padding(
+    padding: const EdgeInsets.only(top: 20, bottom: 20),
+    child: Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('택시'),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('블랙'),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('바이크'),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('대리'),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('택시'),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('블랙'),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('클릭');
+              },
+              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              child: Container(
+                width: 60, 
+                height: 60,
+                decoration: BoxDecoration( //Container 자체를 원으로.
+                  shape: BoxShape.circle, 
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40,),
+                    Text('바이크'),
+                  ],
+                ),
+              ),
+            ),
+            Opacity(
+              opacity: 0.0, 
+              child: InkWell(
+                onTap: () {
+                  print('클릭');
+                },
+                borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+                child: Container(
+                  width: 60, 
+                  height: 60,
+                  decoration: BoxDecoration( //Container 자체를 원으로.
+                    shape: BoxShape.circle, 
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Icon(Icons.local_taxi, size: 40,),
+                      Text('대리'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
   );
-  
 }
+
+final dummyItems = [
+  'https://image.api.playstation.com/vulcan/img/rnd/202010/1520/EfaKUXGWULuDpnL0Ai0eujhs.png',
+  'https://thumbnail.laftel.net/items/home/f60bcd03-0083-4827-b0ff-d19d0a850820.jpg?webp=0&w=760&c=0%2C0%2C1024%2C576',
+  'https://visla.kr/wp/wp-content/uploads/2024/01/20240116_0.jpg'
+];
+
 Widget _buildMiddle() {
-  return Text('Middle');
+  return CarouselSlider(
+    options: CarouselOptions(height: 150.0, autoPlay: true),
+    items: dummyItems.map((url) {
+      return Builder(
+        builder: (BuildContext context) {
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 5.0),
+              child: Image.network(
+                url,
+                fit: BoxFit.cover,
+              ),
+            ),
+          );
+        },
+      );
+    }).toList(),
+  );
 }
+
 Widget _buildBottom() {
   return Text('Bottom');
 }
