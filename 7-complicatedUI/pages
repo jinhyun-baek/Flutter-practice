@@ -26,7 +26,7 @@ Widget _buildTop() {
               onTap: () {
                 print('클릭');
               },
-              borderRadius: BorderRadius.circular(50), //경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
+              borderRadius: BorderRadius.circular(50), //InkWell 물결 경계선을 둥글게 만든다는 거지 child 자체를 원으로 만드는 건 아님!
               child: Container(
                 width: 60, 
                 height: 60,
@@ -220,7 +220,17 @@ Widget _buildMiddle() {
 }
 
 Widget _buildBottom() {
-  return Text('Bottom');
+  final items = List.generate(20, (i){
+    return ListTile(
+      leading: Icon(Icons.notifications_none),
+      title: Text('[이벤트]이것은 공지사항입니다'),
+    );
+  });
+  return ListView(
+    physics: NeverScrollableScrollPhysics(), //안쪽 ListView의 스크롤은 잠금 해놔야.
+    shrinkWrap: true, //ListView 안에 ListView를 넣을 때 필수! 아무리 ListView라도 하나의 요소로 보게 해준다.
+    children: items,
+  );
 }
 
 class Page2 extends StatelessWidget {
